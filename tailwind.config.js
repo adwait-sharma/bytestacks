@@ -49,13 +49,6 @@ module.exports = {
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
   			}
   		},
   		borderRadius: {
@@ -66,7 +59,7 @@ module.exports = {
   		keyframes: {
   			'accordion-down': {
   				from: {
-  					height: 0
+  					height: '0'
   				},
   				to: {
   					height: 'var(--radix-accordion-content-height)'
@@ -77,7 +70,7 @@ module.exports = {
   					height: 'var(--radix-accordion-content-height)'
   				},
   				to: {
-  					height: 0
+  					height: '0'
   				}
   			}
   		},

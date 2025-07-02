@@ -1,6 +1,6 @@
 fileignoreconfig:
-- filename: next-env.d.ts
-  checksum: f1d9fafa945cda0af9b79c9e47d57637a6e352d972c14e499bee1bf5054e6a5b
 - filename: pnpm-lock.yaml
-  checksum: 3568b75da0c1052003fe587adb7c257ed75e0bd296b00b464a2c7f0dc79c5fec
+  checksum: d162e944d72d74208fe98d96a57f30d1572890358c2cce2bd46deb91b29a2cc7
+- filename: src/components/sections/testimonials-section.tsx
+  checksum: ec26610f0730d35e7e1894c6ad47f9d170f95ebadbd744694564cee1a9c35991
 version: ""
