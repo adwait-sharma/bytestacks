@@ -146,10 +146,13 @@ export function TestimonialsSection() {
             {companyLogos.map((company, index) => (
               <div key={index} className="flex items-center justify-center text-gray-400">
                 {company.logo ? (
-                  <img 
+                  <Image 
                     src={company.logo} 
                     alt={company.name}
+                    width={24}
+                    height={24}
                     className="h-6 w-auto opacity-60 grayscale"
+                    unoptimized
                   />
                 ) : (
                   <span className="text-sm font-medium">{company.text}</span>

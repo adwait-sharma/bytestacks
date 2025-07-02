@@ -60,6 +60,7 @@ export function HeroSection() {
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=600&fit=crop&crop=center" 
               alt="Workspace"
               fill
+              priority
               className="object-cover"
             />
           </div>
