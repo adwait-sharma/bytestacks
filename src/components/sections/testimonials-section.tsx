@@ -1,6 +1,8 @@
 'use client'
 
 import Image from "next/image"
+import { motion } from "framer-motion"
+import type { Variants } from "framer-motion"
 
 interface Testimonial {
   id: number
@@ -19,7 +21,7 @@ export function TestimonialsSection() {
       author: "Mark Wilson",
       role: "CTO",
       company: "TechCorp",
-      content: "Working with ByteStacks revolutionized our development workflow. Their AI solutions helped us save months of manual work.",
+      content: "ByteStacks transformed our digital infrastructure with their AI solutions. We've reduced development time by 40% while doubling the quality of our output.",
       color: "bg-blue-100 text-blue-800",
       image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop&crop=faces"
     },
@@ -28,7 +30,7 @@ export function TestimonialsSection() {
       author: "Sarah Johnson",
       role: "Marketing Director",
       company: "Innovate Inc",
-      content: "Our e-commerce site saw a 200% increase in conversions after ByteStacks redesigned our user experience.",
+      content: "The e-commerce platform ByteStacks built for us led to a 217% increase in conversions and a significant drop in cart abandonment. Their attention to UX details is remarkable.",
       color: "bg-pink-100 text-pink-800",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces"
     },
@@ -37,7 +39,7 @@ export function TestimonialsSection() {
       author: "David Chen",
       role: "Founder",
       company: "NextLevel",
-      content: "ByteStacks helped us build a SaaS platform from scratch that now serves over 10,000 businesses worldwide.",
+      content: "From concept to launch in just 12 weeks, ByteStacks delivered a SaaS platform that now serves over 10,000 businesses. Their technical prowess is matched by their business acumen.",
       color: "bg-purple-100 text-purple-800",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces"
     },
@@ -46,7 +48,7 @@ export function TestimonialsSection() {
       author: "Emma Rodriguez",
       role: "Product Manager",
       company: "GrowthHub",
-      content: "Their team's technical expertise is matched only by their dedication to understanding our business needs.",
+      content: "The team at ByteStacks doesn't just execute tasks – they become strategic partners. Their insights helped us pivot our product strategy and capture an entirely new market segment.",
       color: "bg-green-100 text-green-800",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces"
     },
@@ -55,7 +57,7 @@ export function TestimonialsSection() {
       author: "James Smith",
       role: "COO",
       company: "FutureTech",
-      content: "The custom CRM they developed streamlined our operations and improved customer satisfaction scores by 40%.",
+      content: "The custom CRM integration ByteStacks developed connected our siloed systems, providing a unified view of customer data that's increased our team efficiency by 60%.",
       color: "bg-yellow-100 text-yellow-800",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces"
     },
@@ -64,7 +66,7 @@ export function TestimonialsSection() {
       author: "Lisa Chang",
       role: "CEO",
       company: "Automize",
-      content: "ByteStacks delivered our mobile app ahead of schedule and under budget. Their attention to detail is unmatched.",
+      content: "ByteStacks delivered our mobile application two weeks ahead of schedule and 15% under budget, without compromising on quality. Their development process is remarkably efficient.",
       color: "bg-red-100 text-red-800",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces"
     },
@@ -73,16 +75,16 @@ export function TestimonialsSection() {
       author: "Michael Brown",
       role: "VP of Sales",
       company: "SalesForce Pro",
-      content: "Since implementing ByteStacks' AI-powered lead generation system, we've doubled our qualified prospects.",
+      content: "Their AI-powered lead generation system identified high-value prospects we were missing, resulting in a 53% increase in qualified leads and a 32% higher conversion rate.",
       color: "bg-indigo-100 text-indigo-800",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces"
     },
     {
       id: 8,
       author: "Olivia Taylor",
-      role: "E-commerce Manager",
+      role: "E-commerce Director",
       company: "StyleShop",
-      content: "Our Shopify store redesign by ByteStacks resulted in a 150% increase in average order value within 30 days.",
+      content: "The headless commerce solution ByteStacks implemented increased our page load speed by 70% and boosted our mobile conversion rate by 45%. The ROI has been exceptional.",
       color: "bg-cyan-100 text-cyan-800",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=faces"
     }
@@ -99,25 +101,62 @@ export function TestimonialsSection() {
     { name: "NEON", text: "NEON" },
   ]
 
+  const containerAnimation: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05
+      }
+    }
+  }
+
+  const itemAnimation: Variants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    show: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.5 
+      } 
+    }
+  }
+
   return (
     <section className="w-full py-20 bg-white">
       <div className="container px-4 mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-3">What Our Clients Say</h2>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold mb-3">Client Success Stories</h2>
           <p className="text-gray-600 max-w-lg mx-auto">
-            Don't take our word for it – hear from some of our satisfied clients
+            Our clients' achievements speak volumes about our partnership and the quality of our work
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+          variants={containerAnimation}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {testimonials.map((testimonial) => (
-            <div 
-              key={testimonial.id} 
-              className={`${testimonial.color} rounded-xl p-6 flex flex-col justify-between h-full`}
+            <motion.div 
+              key={testimonial.id}
+              variants={itemAnimation}
+              className={`${testimonial.color} rounded-xl p-6 flex flex-col justify-between h-full hover:shadow-md transition-all duration-300`}
             >
-              <p className="font-medium mb-8">{testimonial.content}</p>
+              <p className="font-medium mb-8 leading-relaxed">{testimonial.content}</p>
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
                   <Image
@@ -133,18 +172,31 @@ export function TestimonialsSection() {
                   <p className="text-xs opacity-80">{testimonial.role}, {testimonial.company}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Company Logos */}
-        <div className="text-center">
+        <motion.div 
+          className="text-center mt-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <p className="text-sm text-gray-600 mb-8">
-            Used by companies and people working at
+            Trusted by innovative companies worldwide
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {companyLogos.map((company, index) => (
-              <div key={index} className="flex items-center justify-center text-gray-400">
+              <motion.div 
+                key={index} 
+                className="flex items-center justify-center text-gray-400"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
                 {company.logo ? (
                   <Image 
                     src={company.logo} 
@@ -157,10 +209,10 @@ export function TestimonialsSection() {
                 ) : (
                   <span className="text-sm font-medium">{company.text}</span>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
