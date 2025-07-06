@@ -1,16 +1,14 @@
 fileignoreconfig:
-- filename: pnpm-lock.yaml
-  checksum: 35977c257e46db094e9186f453968171433ccc3123fe88a72154bac912fc0e47
-- filename: src/components/sections/hero-section.tsx
-  checksum: 312e00731b1a2c75964f2ee39d5476c1bc441757f013a5b40e54c2c5d706745b
-- filename: src/components/sections/portfolio-section.tsx
-  checksum: 18866f1d10206c487be475dfa8682de3621113217a68e3001952cab873c2d774
-- filename: src/components/sections/what-we-offer-section.tsx
-  checksum: e11cdeb993adfdafdca213620faf31b2baf77d921c7c89786b741238f14f32e8
+- filename: src/components/ui/logo-carousel.tsx
+  checksum: 6fc862c0d56d4566e20c045f9221a8179a6c3aae46654b54f33364ce7f716e3f
+- filename: src/components/ui/navigation.tsx
+  checksum: ab6b2e6b0a69bfc582ea007766f7054695e4e0d2c971d970c437a0fa28b3e0f3
 - filename: src/components/ui/footer.tsx
-  checksum: 1d15701038901dab3952d4ff07d85b7c4469f949cbeefaaa64d7862c1ab5ad8c
+  checksum: c3624c07d1c2e5ca48e1ad51291558de90b166cf84d714a407df50948f4bb004
 - filename: src/components/sections/faq-section.tsx
-  checksum: abf8c6de8f40dfc825673241698feebf0d02a2a059615636814fd22bc54f15c6
+  checksum: a3de0d5f19c18032a01eeae160bb139c3f3ea9cb58f392a07ce7c3d9e92ecd65
 - filename: src/components/sections/testimonials-section.tsx
-  checksum: 3a43a814febf08794c4acaad437330a9fd96c728bbbf3c08e450664511a8f8da
+  checksum: af8cc8b96242f7fb22b1874899fbbc9c78cd336c1a51db8554dd24a84a03128b
+- filename: src/components/sections/what-we-offer-section.tsx
+  checksum: bd245520a7378442fc519eb2f1d4a98cb8f1b8ebc79bfa9933a8274798f727e8
 version: ""
